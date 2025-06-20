@@ -30,7 +30,7 @@ def main():
     elif args.mode == 'zero_shot':
         payload = {
             'tts_text': args.tts_text,
-            'prompt_text': args.prompt_text
+            # 'prompt_text': args.prompt_text
         }
         files = [('prompt_wav', ('prompt_wav', open(args.prompt_wav, 'rb'), 'application/octet-stream'))]
         response = requests.request("GET", url, data=payload, files=files, stream=True)
@@ -60,26 +60,26 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument('--host',
                         type=str,
-                        default='0.0.0.0')
+                        default='127.0.0.1')
     parser.add_argument('--port',
                         type=int,
                         default='50000')
     parser.add_argument('--mode',
-                        default='sft',
+                        default='zero_shot',
                         choices=['sft', 'zero_shot', 'cross_lingual', 'instruct'],
                         help='request mode')
     parser.add_argument('--tts_text',
                         type=str,
-                        default='你好，我是通义千问语音合成大模型，请问有什么可以帮您的吗？')
+                        default='6月7日，万千高考学子奔赴考场，为青春和梦想奋力一搏。习近平总书记一直十分关心青年成长成才，他常常走到青年中间，与他们谈梦想、论志向。')
     parser.add_argument('--spk_id',
                         type=str,
                         default='中文女')
-    parser.add_argument('--prompt_text',
-                        type=str,
-                        default='希望你以后能够做的比我还好呦。')
+    # parser.add_argument('--prompt_text',
+    #                     type=str,
+    #                     default='那已经将近20年了，一直很困扰我。嗯，有的时候呢疼痛的时候就走路都走不了啊，这整个连一条筋都很痛,然后我就是一直')
     parser.add_argument('--prompt_wav',
                         type=str,
-                        default='../../../asset/zero_shot_prompt.wav')
+                        default='C:/Users/Administrator/Desktop/数字人定制原视频/1-25.mp3')
     parser.add_argument('--instruct_text',
                         type=str,
                         default='Theo \'Crimson\', is a fiery, passionate rebel leader. \
@@ -90,3 +90,4 @@ if __name__ == "__main__":
     args = parser.parse_args()
     prompt_sr, target_sr = 16000, 22050
     main()
+#python .\client.py --mode zero_shot  --prompt_text '那已经将近20年了，一直很困扰我。嗯，有的时候呢疼痛的时候就走路都走不了啊，这整个连一条筋都很痛,然后我就是一直' --prompt_wav 'C:/Users/Administrator/Desktop/数字人定制原视频/1-10.mp3'

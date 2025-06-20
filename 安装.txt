@@ -1,0 +1,5 @@
+https://zhuanlan.zhihu.com/p/19244164610
+
+
+windwos启用长路径支持（需要管理员权限）
+Set-ItemProperty -Path “HKLM:\SYSTEM\CurrentControlSet\Control\FileSystem” -Name “LongPathsEnabled” -Value 1 -Type DWord
