@@ -1,0 +1,79 @@
+# Git 相关
+.git
+.gitignore
+.gitattributes
+
+# 文档文件
+README.md
+FAQ.md
+LICENSE
+CODE_OF_CONDUCT.md
+*.md
+
+# Python 缓存文件
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# 虚拟环境
+venv/
+env/
+ENV/
+
+# IDE 文件
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# 操作系统文件
+.DS_Store
+Thumbs.db
+
+# 日志文件
+*.log
+logs/
+
+# 临时文件
+tmp/
+temp/
+*.tmp
+
+# 测试文件
+tests/
+test_*
+*_test.py
+
+# 示例和工具（可选，根据需要调整）
+examples/
+tools/
+webui.py
+vllm_example.py
+SenseVoice.py
+
+# 开发相关
+docker/
+runtime/python/grpc/
+runtime/python/fastapi/client.py
+runtime/python/fastapi/server2.py
+
+# 其他不需要的文件
+asset/ 

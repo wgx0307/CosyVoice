@@ -80,7 +80,7 @@ async def inference_zero_shot(tts_text: str = Form(), prompt_wav: UploadFile = F
         language="auto",  # "zn", "en", "yue", "ja", "ko", "nospeech"
         use_itn=True,
         # batch_size_s=60,
-        # merge_vad=True,  #
+        # merge_vad=True,
         # merge_length_s=15,
         # ban_emo_unk=True,
     )

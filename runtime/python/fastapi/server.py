@@ -208,7 +208,7 @@ async def tts(
             "msg": f"File not found at path: {reference_audio}",
             "data": {}
         }
-    speed = 1.0
+    speed = 1
     with open(reference_audio, "rb") as audio_file:
         prompt_speech_16k = load_wav(audio_file, 16000)
         model_output = cosyvoice.inference_zero_shot(text, reference_text, prompt_speech_16k,speed=speed)
